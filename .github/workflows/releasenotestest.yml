@@ -13,3 +13,17 @@ jobs:
       uses: actions/checkout@v2
     - name: create-new-branch
       run: git checkout -b releasenotesbranch
+    - name: commit and push changes
+      run: |
+        git config user.name "srikanthnamoju"
+        git config user.email "srikanthnamoju5677@gmail.com"
+        git add .
+        git commit -m "updated the modifications"
+        git push origin releasenotesbranch
+    - name: open pull request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{secrets.GITHUB_TOKEN}}
+        branch: releasenotesbranch
+        title: releasenotes update
+        body: "review the changes made to releasenotes files"
