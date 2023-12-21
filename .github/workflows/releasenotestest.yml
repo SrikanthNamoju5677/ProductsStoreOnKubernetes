@@ -1,0 +1,15 @@
+name: Release-Notes
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  create-branch-PR:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Git Checkout
+      uses: actions/checkout@v2
+    - name: create-new-branch
+      run: git checkout -b releasenotesbranch
