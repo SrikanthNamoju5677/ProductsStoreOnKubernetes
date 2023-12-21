@@ -12,7 +12,9 @@ jobs:
     - name: Git Checkout
       uses: actions/checkout@v2
     - name: create-new-branch
-      run: git checkout -b releasenotesbranch
+      run: |
+        git checkout -b releasenotesbranch
+        touch releasenotes.html
     - name: commit and push changes
       run: |
         git config user.name "srikanthnamoju"
