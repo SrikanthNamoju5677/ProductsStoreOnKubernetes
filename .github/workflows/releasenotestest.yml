@@ -20,7 +20,7 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: create-new-branch
         run: |
-          git checkout -b releasenotesbranch3
+          git checkout -b releasenotesbranch4
           python main.py
       - name: commit and push changes
         run: |
@@ -28,7 +28,7 @@ jobs:
           git config user.email "srikanthnamoju5677@gmail.com"
           git add .
           git commit -m "updated the modifications"
-          git push origin releasenotesbranch3
+          git push origin releasenotesbranch4
       - name: open pull request
         uses: peter-evans/create-pull-request@v3
         with:
