@@ -9,23 +9,31 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Git Checkout
-      uses: actions/checkout@v2
-    - name: create-new-branch
-      run: |
-        git checkout -b releasenotesbranch
-        touch releasenotes.html
-    - name: commit and push changes
-      run: |
-        git config user.name "srikanthnamoju"
-        git config user.email "srikanthnamoju5677@gmail.com"
-        git add .
-        git commit -m "updated the modifications"
-        git push origin releasenotesbranch
-    - name: open pull request
-      uses: peter-evans/create-pull-request@v3
-      with:
-        token: ${{secrets.GITHUB_TOKEN}}
-        branch: releasenotesbranch
-        title: releasenotes update
-        body: "review the changes made to releasenotes files"
+      - name: checkout repo content
+        uses: actions/checkout@v3 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8 #install the python needed
+      - name: Install dependencies
+        run: |
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      - name: create-new-branch
+        run: |
+          git checkout -b releasenotesbranch2
+          python main.py
+          touch releasenotes.html
+      - name: commit and push changes
+        run: |
+          git config user.name "srikanthnamoju"
+          git config user.email "srikanthnamoju5677@gmail.com"
+          git add .
+          git commit -m "updated the modifications"
+          git push origin releasenotesbranch2
+      - name: open pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          branch: releasenotesbranch
+          title: releasenotes update
+          body: "review the changes made to releasenotes files"
