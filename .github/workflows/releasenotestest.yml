@@ -33,6 +33,6 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          branch: releasenotesbranch3
+          branch: main
           title: releasenotes update
           body: "review the changes made to releasenotes files"
