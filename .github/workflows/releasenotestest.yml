@@ -20,20 +20,19 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: create-new-branch
         run: |
-          git checkout -b releasenotesbranch2
+          git checkout -b releasenotesbranch3
           python main.py
-          touch releasenotes.html
       - name: commit and push changes
         run: |
           git config user.name "srikanthnamoju"
           git config user.email "srikanthnamoju5677@gmail.com"
           git add .
           git commit -m "updated the modifications"
-          git push origin releasenotesbranch2
+          git push origin releasenotesbranch3
       - name: open pull request
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{secrets.GITHUB_TOKEN}}
-          branch: releasenotesbranch
+          branch: releasenotesbranch3
           title: releasenotes update
           body: "review the changes made to releasenotes files"
