@@ -3,7 +3,7 @@
 
 import shutil, os
 
-def append_after_line('example.txt','example2.txt', 10):
+def append_after_line('example.txt', 'example2.txt', 10):
   with open('example.txt', 'r') as file1:
     contenttoappend = file1.read()
    with open('example2.txt', "a") as file2:
