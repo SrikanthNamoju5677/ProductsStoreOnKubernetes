@@ -13,7 +13,7 @@ import shutil, os
 fp = open("example.txt","r")
 # fp is file1
 data = fp.read()
-f = open('example2.txt', 'w')
+f = open("example2.txt", "a")
 #f is file2 on which you want to write data
 ss = f.readlines()
 f.seek(0)
