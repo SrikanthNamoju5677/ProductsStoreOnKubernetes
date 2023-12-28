@@ -16,5 +16,5 @@ with open(file_path, 'r') as file:
 if 1 <= line_number_tomodify <= len(lines):
   lines[line_number_tomodify - 1] = newcontent + '\n'
 
-with open(file_path, 'r') as file:
+with open(file_path, 'w') as file:
   lines = file.writelines(lines)
