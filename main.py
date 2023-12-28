@@ -15,7 +15,7 @@ with open(file_path, 'r') as file:
 
 if 1 <= line_to_read <= len(lines):
   desired_line = lines[line_to_read - 1].strip()
-  variable = desired_line[5:15]
+  variable = desired_line[80:86]
   print(variable)
 else:
   print("invalid line")
