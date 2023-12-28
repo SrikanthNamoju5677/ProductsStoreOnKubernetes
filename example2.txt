@@ -11,15 +11,11 @@
 
 <h3><font face="Times New Roman">New functionality</font></h3>
 
-modified some functionality
-
 
 <h3><font face="Times New Roman">Modified functionality</font></h3>
 
 
 <h3><font face="Times New Roman">Bug fixes</font></h3>
-
-fixed some bugs
 
 
 <h3><font face="Times New Roman">Graveyarded applications, macros and sequences</font></h3>
