@@ -10,14 +10,22 @@ import shutil, os
 #      lines = file2.readlines()
 #      start_line = min(10,len(lines) + 1)
 #      file2.write(contenttoappend)
-fp = open("example.txt","r")
-# fp is file1
-data = fp.read()
-f = open("example2.txt", "r")
-#f is file2 on which you want to write data
-ss = f.readlines()
-f.seek(0)
-f.truncate()
-ss.insert(5,data)
-#give your own line number instead of 5
-f.write(''.join(ss))
+# fp = open("example.txt","r")
+# # fp is file1
+# data = fp.read()
+# f = open("example2.txt", "r")
+# #f is file2 on which you want to write data
+# ss = f.readlines()
+# f.seek(0)
+# f.truncate()
+# ss.insert(5,data)
+# #give your own line number instead of 5
+# f.write(''.join(ss))
+
+with open("example.txt", "r") as f1:
+    t1 = f1.readlines()
+with open("example2.txt", "r") as f2:
+    t2 = f2.readlines()
+t2.insert(20, t1)
+with open("example2.txt", "w") as f2:
+    f2.writelines(t2)
