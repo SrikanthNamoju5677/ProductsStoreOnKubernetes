@@ -17,6 +17,8 @@ if 1 <= line_to_read <= len(lines):
   desired_line = lines[line_to_read - 1].strip()
   variable = desired_line[80:86]
   print(variable)
+  with open(file_path, 'w') as file:
+  lines = file.writelines(line.replace('variable', '7777777'))
 else:
   print("invalid line")
 
