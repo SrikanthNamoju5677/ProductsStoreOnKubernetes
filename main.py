@@ -18,10 +18,10 @@ if 1 <= line_to_read <= len(lines):
   desired_line = lines[line_to_read - 1].strip()
   variable = desired_line[80:86]
   print(variable)
-  data = data.replace(variable, "replaced")
-  print(data)
+  data2 = data.replace(variable, "replaced")
+  print(data2)
   with open(file_path, 'w') as file:
-    file.write(data)
+    file.write(data2)
   print("Text replaced")
   # lines = file.writelines(line.replace('variable', '7777777'))
 else:
