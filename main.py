@@ -12,7 +12,7 @@ line_to_read = 2
 
 with open(file_path, 'r') as file:
   lines = file.readlines()
-  data = file.read()
+  data = file.read(lines)
 
 if 1 <= line_to_read <= len(lines):
   desired_line = lines[line_to_read - 1].strip()
