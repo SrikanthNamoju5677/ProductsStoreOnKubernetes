@@ -26,22 +26,22 @@ jobs:
         run: |
           git checkout -b releasenotesbranch4
           python main.py
-      # - name: commit and push changes
-      #   run: |
-      #     git config user.name "srikanthnamoju"
-      #     git config user.email "srikanthnamoju5677@gmail.com"
-      #     git add .
-      #     git commit -m "updated the modifications"
-      #     git push origin releasenotesbranch4
-      # - name: open pull request
-      #   uses: peter-evans/create-pull-request@v3
-      #   with:
-      #     token: ${{secrets.GITHUB_TOKEN}}
-      #     branch: main
-      #     title: releasenotes update
-      #     body: "review the changes made to releasenotes files"
-      # - name: Delete branch
-      #   uses: dawidd6/action-delete-branch@v3
-      #   with:
-      #     github_token: ${{github.token}}
-      #     branches: releasenotesbranch4
+      - name: commit and push changes
+        run: |
+          git config user.name "srikanthnamoju"
+          git config user.email "srikanthnamoju5677@gmail.com"
+          git add .
+          git commit -m "updated the modifications"
+          git push origin releasenotesbranch4
+      - name: open pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          branch: main
+          title: releasenotes update
+          body: "review the changes made to releasenotes files"
+      - name: Delete branch
+        uses: dawidd6/action-delete-branch@v3
+        with:
+          github_token: ${{github.token}}
+          branches: releasenotesbranch4
