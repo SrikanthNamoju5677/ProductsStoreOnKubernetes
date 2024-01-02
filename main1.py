@@ -36,10 +36,11 @@ with open(file_path, 'r') as file1:
   desired_line = lines[line_to_read - 1].strip()
   updateversion = desired_line[80:86]
   print(updateversion)
+with open('example2.txt', 'r') as file2:
+    line = file2.readlines()  
+  
 
-if 1 <= line_to_write <= len(lines):
-  with open('example2.txt', 'r') as file2:
-    line = file2.readlines()
+if 1 <= line_to_write <= len(line):
     desired_lines = line[line_to_write - 1].strip()
     variable = desired_lines[42:48]
     print(variable)
