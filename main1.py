@@ -36,15 +36,18 @@ with open(file_path, 'r') as file:
   desired_line = lines[line_to_read - 1].strip()
   updateversion = desired_line[80:86]
   print(updateversion)
-# if 1 <= line_to_read <= len(lines):
-#   desired_line = lines[line_to_read - 1].strip()
-#   variable = desired_line[80:86]
-#   print(variable)
-#   data2 = desired_line.replace(variable, "replaced")
-#   print(data2)
-#   print("Text replaced")
-#   # lines = file.writelines(line.replace('variable', '7777777'))
-# # else:
-#   print("invalid line")
+
+if 1 <= line_to_write <= len(lines):
+  with open('example2.txt', 'r') as file:
+  lines = file.readlines()
+  desired_line = lines[line_to_read - 1].strip()
+  variable = desired_line[42:48]
+  print(variable)
+  data2 = desired_line.replace(variable, updateversion)
+  print(data2)
+  print("Text replaced")
+  # lines = file.writelines(line.replace('variable', '7777777'))
+# else:
+  print("invalid line")
   
   
