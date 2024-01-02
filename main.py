@@ -9,15 +9,16 @@ import shutil
 file_path = 'example.txt'
 line_to_read = 2
 specified2_linenumber = 10
-  with open('example.txt', 'r') as file1:
-    lines = file1.readlines()
-  with open('example2.txt', "w") as file2:
-     file2.writelines(lines[:specified2_linenumber])
-  with open('example.txt', "r") as appendfile:
-     file2.write(appendfile.read())
-     file2.writelines(lines[specified2_linenumber])
-     file1.close()
-     file2.close()
+
+with open('example.txt', 'r') as file1:
+  lines = file1.readlines()
+with open('example2.txt', "w") as file2:
+   file2.writelines(lines[:specified2_linenumber])
+with open('example.txt', "r") as appendfile:
+   file2.write(appendfile.read())
+   file2.writelines(lines[specified2_linenumber])
+   file1.close()
+   file2.close()
 
 
 # with open(file_path, 'r') as file:
