@@ -14,7 +14,9 @@ with open('example.txt', 'r') as file1:
   lines = file1.readlines()
 with open('example2.txt', "w") as file2:
    file2.writelines(lines[:specified2_linenumber])
+print(file2)
 with open('example.txt', "r") as appendfile:
+  print(appendfile)
    file2.write(appendfile.read())
    file2.writelines(lines[specified2_linenumber])
    file1.close()
