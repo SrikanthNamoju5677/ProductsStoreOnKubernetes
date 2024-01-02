@@ -50,6 +50,15 @@ if 1 <= line_to_write <= len(line):
     # lines = file.writelines(line.replace('variable', '7777777'))
 else:
   print("invalid line")
+
+# filename = input("File: ")
+# line_number = int(input("Line: "))
+# text = input("Text: ")
+
+# Call the replace_line() function to replace the text at the line number 
+# 'line_number' in the file with the filename 'filename' with the replacement 
+# text 'text'.
+replace_line("example2.txt","7", data2)
   
 def replace_line("example2.txt","7", data2):
 
