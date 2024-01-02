@@ -36,7 +36,7 @@ if 1 <= line_to_read <= len(lines):
   data2 = desired_line.replace(variable, "replaced")
   print(data2)
   with open(file_path, 'w') as file:
-    file.write(data2)
+    file.writelines(data2)
   print("Text replaced")
   # lines = file.writelines(line.replace('variable', '7777777'))
 else:
