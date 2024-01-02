@@ -6,7 +6,7 @@ import shutil
 # use copyfile() 
 # shutil.copyfile('example.txt','example2.txt')
 
-file_path = 'example2.txt'
+file_path = 'example.txt'
 line_to_read = 2
 line_to_write = 1
 specified2_linenumber = 10
