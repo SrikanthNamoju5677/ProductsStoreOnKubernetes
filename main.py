@@ -12,6 +12,7 @@ specified2_linenumber = 10
 
 with open('example.txt', 'r') as file1:
   lines = file1.readlines()
+  print(file1)
 with open('example2.txt', "w") as file2:
    file2.writelines(lines[:specified2_linenumber])
 print(file2)
