@@ -17,12 +17,12 @@ f2 = open('example2.txt', "w")
 data = f2.writelines(lines[:specified2_linenumber])
 print(data)
 appendfile = open('example.txt', "r")
-   data2 = appendfile.read()
-  print(data2)
-   file2.write(appendfile.read())
-   file2.writelines(lines[specified2_linenumber])
-   file1.close()
-   file2.close()
+data2 = appendfile.read()
+print(data2)
+f2.write(appendfile.read())
+f2.writelines(lines[specified2_linenumber])
+f1.close()
+f2.close()
 
 
 # with open(file_path, 'r') as file:
