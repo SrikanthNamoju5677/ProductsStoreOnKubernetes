@@ -47,7 +47,7 @@ if 1 <= line_to_write <= len(lines):
     print(data2)
     print("Text replaced")
     # lines = file.writelines(line.replace('variable', '7777777'))
- else:
+else:
   print("invalid line")
   
   
