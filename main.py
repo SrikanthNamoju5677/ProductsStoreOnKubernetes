@@ -10,17 +10,23 @@ file_path = 'example2.txt'
 line_to_read = 2
 specified2_linenumber = 10
 
-f1 = open('example.txt', 'r')
-lines = f1.readlines()
+
+
+op = open('example2.txt', 'r')
+lines = op.readlines()
 print(lines)
-f2 = open('example2.txt', "w")
-data = f2.writelines(lines[:specified2_linenumber])
-print(data)
-appendfile = open('example.txt', "r")
-data2 = appendfile.read()
-print(data2)
-f2.write(appendfile.read())
-f2.writelines(lines[specified2_linenumber])
+ip = open('example.txt', "r")
+content_to_append = ip.read()
+
+op = open('example2.txt', 'w')
+op.writelines(lines[:specified2_linenumber])
+# data = ip.writelines(lines[:specified2_linenumber])
+# print(data)
+# appendfile = open('example.txt', "r")
+# data2 = appendfile.read()
+# print(data2)
+f2.write(content_to_append)
+f2.writelines(lines[specified2_linenumber:])
 f1.close()
 f2.close()
 
