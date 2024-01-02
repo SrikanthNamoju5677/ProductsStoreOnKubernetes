@@ -31,16 +31,16 @@ specified2_linenumber = 10
 # op.close()
 
 
-with open(file_path, 'r') as file:
-  lines = file.readlines()
+with open(file_path, 'r') as file1:
+  lines = file1.readlines()
   desired_line = lines[line_to_read - 1].strip()
   updateversion = desired_line[80:86]
   print(updateversion)
 
 if 1 <= line_to_write <= len(lines):
-  with open('example2.txt', 'r') as file:
-    lines = file.readlines()
-    desired_line = lines[line_to_read - 1].strip()
+  with open('example2.txt', 'r') as file2:
+    line = file2.readlines()
+    desired_line = line[line_to_write - 1].strip()
     variable = desired_line[42:48]
     print(variable)
     data2 = desired_line.replace(variable, updateversion)
