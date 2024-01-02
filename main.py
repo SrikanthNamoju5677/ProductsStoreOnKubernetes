@@ -10,14 +10,15 @@ file_path = 'example.txt'
 line_to_read = 2
 specified2_linenumber = 10
 
-with open('example.txt', 'r') as file1:
-  lines = file1.readlines()
+f1 = open('example.txt', 'r')
+  lines = f1.readlines()
   print(lines)
-with open('example2.txt', "w") as file2:
-   data = file2.writelines(lines[:specified2_linenumber])
-print(data)
-with open('example.txt', "r") as appendfile:
-  print(appendfile)
+f2 = open('example2.txt', "w")
+   data = f2.writelines(lines[:specified2_linenumber])
+   print(data)
+appendfile = open('example.txt', "r")
+   data2 = appendfile.read()
+  print(data2)
    file2.write(appendfile.read())
    file2.writelines(lines[specified2_linenumber])
    file1.close()
