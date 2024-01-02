@@ -8,7 +8,7 @@ import shutil
 
 file_path = 'example.txt'
 line_to_read = 2
-line_to_write = 1
+line_to_write = 7
 specified2_linenumber = 10
 
 
