@@ -13,22 +13,22 @@ specified2_linenumber = 10
 
 
 
-# op = open('example2.txt', 'r')
-# lines = op.readlines()
-# print(lines)
-# ip = open('example.txt', "r")
-# content_to_append = ip.read()
+op = open('example2.txt', 'r')
+lines = op.readlines()
+print(lines)
+ip = open('example.txt', "r")
+content_to_append = ip.read()
 
-# op = open('example2.txt', 'w')
-# op.writelines(lines[:specified2_linenumber])
-# # data = ip.writelines(lines[:specified2_linenumber])
-# # print(data)
-# # appendfile = open('example.txt', "r")
-# # data2 = appendfile.read()
-# # print(data2)
-# op.write(content_to_append)
-# op.writelines(lines[specified2_linenumber:])
-# op.close()
+op = open('example2.txt', 'w')
+op.writelines(lines[:specified2_linenumber])
+# data = ip.writelines(lines[:specified2_linenumber])
+# print(data)
+# appendfile = open('example.txt', "r")
+# data2 = appendfile.read()
+# print(data2)
+op.write(content_to_append)
+op.writelines(lines[specified2_linenumber:])
+op.close()
 
 
 with open(file_path, 'r') as file1:
@@ -59,6 +59,6 @@ with open('example2.txt', 'r') as file:
 
 with open('example2.txt', "w") as file:
   file.write(contents)
-
+  file.close()
   
   
