@@ -57,7 +57,7 @@ with open('example2.txt', 'r') as file:
   contents = file.read()
   contents = contents.replace(data2,updateversion)
 
-with open(filename, "w") as file:
+with open('example2.txt', "w") as file:
   file.write(contents)
 
   
