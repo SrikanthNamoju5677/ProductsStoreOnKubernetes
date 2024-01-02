@@ -25,10 +25,9 @@ op.writelines(lines[:specified2_linenumber])
 # appendfile = open('example.txt', "r")
 # data2 = appendfile.read()
 # print(data2)
-f2.write(content_to_append)
-f2.writelines(lines[specified2_linenumber:])
-f1.close()
-f2.close()
+op.write(content_to_append)
+op.writelines(lines[specified2_linenumber:])
+op.close()
 
 
 # with open(file_path, 'r') as file:
