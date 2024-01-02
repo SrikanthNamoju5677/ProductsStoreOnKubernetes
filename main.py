@@ -11,11 +11,11 @@ line_to_read = 2
 specified2_linenumber = 10
 
 f1 = open('example.txt', 'r')
-  lines = f1.readlines()
-  print(lines)
+lines = f1.readlines()
+print(lines)
 f2 = open('example2.txt', "w")
-   data = f2.writelines(lines[:specified2_linenumber])
-   print(data)
+data = f2.writelines(lines[:specified2_linenumber])
+print(data)
 appendfile = open('example.txt', "r")
    data2 = appendfile.read()
   print(data2)
