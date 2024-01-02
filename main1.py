@@ -40,10 +40,10 @@ with open(file_path, 'r') as file1:
 if 1 <= line_to_write <= len(lines):
   with open('example2.txt', 'r') as file2:
     line = file2.readlines()
-    desired_line = line[line_to_write - 1].strip()
-    variable = desired_line[42:48]
+    desired_lines = line[line_to_write - 1].strip()
+    variable = desired_lines[42:48]
     print(variable)
-    data2 = desired_line.replace(variable, updateversion)
+    data2 = desired_lines.replace(variable, updateversion)
     print(data2)
     print("Text replaced")
     # lines = file.writelines(line.replace('variable', '7777777'))
