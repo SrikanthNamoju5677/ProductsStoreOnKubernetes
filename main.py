@@ -8,14 +8,14 @@ import shutil
 
 file_path = 'example.txt'
 line_to_read = 2
-
-def append_after_line('example.txt', 'example2.txt', 10):
+specified2_linenumber = 10
   with open('example.txt', 'r') as file1:
-    contenttoappend = file1.read()
-   with open('example2.txt', "a") as file2:
-     lines = file2.readlines()
-     start_line = min(10,len(lines) + 1)
-     file2.write(contenttoappend)
+    lines = file1.readlines()
+  with open('example2.txt', "w") as file2:
+     file2.writelines(lines[:specified2_linenumber])
+  with open('example.txt', "r") as appendfile:
+     file2.write(appendfile.read())
+     file2.writelines(lines[specified2_linenumber])
      file1.close()
      file2.close()
 
