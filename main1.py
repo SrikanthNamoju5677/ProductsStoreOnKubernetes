@@ -14,18 +14,6 @@ line_to_write = 7
 specific_line_number = 14
 
 
-output_file = open(release_history, 'r')
-lines = output_file.readlines()
-input_file = open(release_notes, "r")
-content_to_append = input_file.read()
-
-output_file = open(release_history, 'r')
-output_file.writelines(lines[:specific_line_number])
-output_file.write(content_to_append)
-output_file.writelines(lines[specific_line_number:])
-output_file.close()
-
-
 with open(release_notes, 'r') as file1:
   lines = file1.readlines()
   desired_line = lines[line_to_read - 1].strip()
@@ -50,6 +38,18 @@ with open(release_history, 'r') as file:
 with open(release_history, "w") as file:
   file.write(contents)
   file.close()
+
+output_file = open(release_history, 'r')
+lines = output_file.readlines()
+input_file = open(release_notes, "r")
+content_to_append = input_file.read()
+
+output_file = open(release_history, 'r')
+output_file.writelines(lines[:specific_line_number])
+output_file.write(content_to_append)
+output_file.writelines(lines[specific_line_number:])
+output_file.close()
+
   
 # use copyfile() 
 shutil.copyfile(release_template,release_notes)  
