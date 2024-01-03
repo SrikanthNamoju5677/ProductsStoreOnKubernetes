@@ -33,7 +33,7 @@ else:
 
 with open(release_history, 'r') as file:
   contents = file.read()
-  contents = contents.replace(variable,updateversion)
+  contents = contents.replace(existversion,updateversion)
 
 with open(release_history, "w") as file:
   file.write(contents)
