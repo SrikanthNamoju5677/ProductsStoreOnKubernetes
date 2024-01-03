@@ -44,7 +44,7 @@ lines = output_file.readlines()
 input_file = open(release_notes, "r")
 content_to_append = input_file.read()
 
-output_file = open(release_history, 'r')
+output_file = open(release_history, 'w')
 output_file.writelines(lines[:specific_line_number])
 output_file.write(content_to_append)
 output_file.writelines(lines[specific_line_number:])
