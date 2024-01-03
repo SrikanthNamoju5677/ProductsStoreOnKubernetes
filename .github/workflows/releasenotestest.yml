@@ -1,10 +1,13 @@
 name: Release-Notes
 
 on:
-  push:
-    branches: none # [ main ]
-  pull_request:
-    branches:  none # [ release ]
+  create:
+    tags:
+      - 'BUILD-*-*'
+  # push:
+  #   branches: none # [ main ]
+  # pull_request:
+  #   branches:  none # [ release ]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
