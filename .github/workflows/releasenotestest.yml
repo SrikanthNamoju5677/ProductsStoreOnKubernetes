@@ -43,7 +43,7 @@ jobs:
             git commit -m "$PR_TITLE"
             git push origin $BRANCH_NAME
             gh pr create --title "$PR_TITLE" --body "This is an automated PR to update the files"
-            gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
+            gh pr merge --auto
           else
             echo "Looks like there was nothing to update."
           fi
