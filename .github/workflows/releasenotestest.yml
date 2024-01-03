@@ -27,12 +27,24 @@ jobs:
           git checkout -b releasenotesbranch4
           python main1.py
       - name: commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          PR_TITLE="updated the files"
+          BRANCH_NAME="releasenotesbranch4"
           git config user.name "srikanthnamoju"
           git config user.email "srikanthnamoju5677@gmail.com"
           git add .
-          git commit -m "updated the modifications"
-          git push origin releasenotesbranch4
+          if [[ -n "$(git status --porcelain)" ]]; then
+            echo "Creating PR \"$PR_TITLE\" for branch $BRANCH_NAME"
+            git commit -m "$PR_TITLE"
+            git push origin $BRANCH_NAME
+            gh pr create --title "$PR_TITLE" --body "This is an automated PR to update the files"
+            gh pr merge --auto --delete-branch --squash "$BRANCH_NAME"
+          else
+            echo "Looks like there was nothing to update."
+          fi
+
       # - name: open pull request
       #   uses: peter-evans/create-pull-request@v3
       #   with:
@@ -40,13 +52,13 @@ jobs:
       #     branch: main
       #     title: releasenotes update
       #     body: "review the changes made to releasenotes files"    
-      - name: create pull request
-        run: |
-          gh pr create --base main --head releasenotesbranch4 --title "modified files" --body "Please review the changes"
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - name: Delete branch
-        uses: dawidd6/action-delete-branch@v3
-        with:
-          github_token: ${{github.token}}
-          branches: releasenotesbranch4
+      # - name: create pull request
+      #   run: |
+      #     gh pr create --base main --head releasenotesbranch4 --title "modified files" --body "Please review the changes"
+      #   env:
+      #     GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      # - name: Delete branch
+      #   uses: dawidd6/action-delete-branch@v3
+      #   with:
+      #     github_token: ${{github.token}}
+      #     branches: releasenotesbranch4
