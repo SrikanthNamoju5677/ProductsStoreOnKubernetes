@@ -33,11 +33,18 @@ jobs:
           git add .
           git commit -m "updated the modifications"
           git push origin releasenotesbranch4
-      - name: create pull request
-        run: |
-          gh pr create --base main --head releasenotesbranch4 --title "modified files" --body "Please review the changes"
-        env:
-          GITHUB_TOKEN: ${{github.token}}
+      - name: open pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{secrets.GITHUB_TOKEN}}
+          branch: main
+          title: releasenotes update
+          body: "review the changes made to releasenotes files"    
+      # - name: create pull request
+      #   run: |
+      #     gh pr create --base main --head releasenotesbranch4 --title "modified files" --body "Please review the changes"
+      #   env:
+      #     GITHUB_TOKEN: ${{github.token}}
       - name: Delete branch
         uses: dawidd6/action-delete-branch@v3
         with:
