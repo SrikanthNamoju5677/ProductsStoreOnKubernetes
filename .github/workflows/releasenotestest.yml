@@ -47,7 +47,10 @@ jobs:
           else
             echo "Looks like there was nothing to update."
           fi
-
+      - name: commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh repo branch --delete releasenotesbranch4
       # - name: open pull request
       #   uses: peter-evans/create-pull-request@v3
       #   with:
