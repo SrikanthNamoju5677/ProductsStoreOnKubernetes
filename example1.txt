@@ -35,4 +35,3 @@
 
 <h3><font face="Times New Roman">Applications</font></h3>
 
-Template replaced
