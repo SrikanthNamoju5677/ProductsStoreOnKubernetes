@@ -164,4 +164,42 @@ Template replaced
 <h3><font face="Times New Roman">Applications</font></h3>
 
 Template replaced
+<hr>
+<h3><font face="Times New Roman">This release document contains updates for the 202309 release w.r.t. 202303 release.</font></h3>
+
+<hr>
+<h2><font face="Times New Roman" color="#FF0000">Red card</font></h2>
+
+<h2><font face="Times New Roman">Highlights</font></h2>
+
+<h3><font face="Times New Roman">Infrastructure</font></h3>
+
+
+<h3><font face="Times New Roman">New functionality</font></h3>
+
+
+<h3><font face="Times New Roman">Modified functionality</font></h3>
+
+
+<h3><font face="Times New Roman">Bug fixes</font></h3>
+
+
+<h3><font face="Times New Roman">Graveyarded applications, macros and sequences</font></h3>
+
+
+<h2><font face="Times New Roman">What is new and what has changed</font></h2>
+
+
+<h3><font face="Times New Roman">Infrastructure</font></h3>
+
+
+<h3><font face="Times New Roman">User Interface</font></h3>
+
+
+<h3><font face="Times New Roman">Macros</font></h3>
+
+
+<h3><font face="Times New Roman">Applications</font></h3>
+
+Template replaced
 content added from 14th line
