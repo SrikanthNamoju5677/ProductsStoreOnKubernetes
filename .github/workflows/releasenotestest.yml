@@ -28,7 +28,7 @@ jobs:
       - name: create-new-branch
         run: |
           git checkout -b releasenotesbranch4
-          python main1.py
+          python template.py
       - name: commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
