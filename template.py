@@ -1,7 +1,7 @@
 import sys
 
-currentrelease=sys.argv[1]
-currentreleaseyear=sys.argv[2]
+currentrelease = sys.argv[1]
+currentreleaseyear = sys.argv[2]
 
 print (currentrelease , currentreleaseyear)
 
