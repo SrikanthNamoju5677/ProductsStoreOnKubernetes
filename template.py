@@ -1,4 +1,10 @@
+currentrelease=sys.argv[1]
+currentreleaseyear=sys.argv[2]
+
 default_template_content = """
+<hr>
+<h3><font face="Times New Roman">This release document contains updates for the currentrelease release w.r.t. currentreleaseyear release.</font></h3>
+<hr>
 <h2><font face="Times New Roman" color="#FF0000">Red Card</h2>
     <ul class="red_card">
 	<li>None</li>	
