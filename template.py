@@ -1,9 +1,15 @@
 import sys
+import shutil
+import os
 
 Current_release = sys.argv[1]
 Current_releaseyear = sys.argv[2]
 
-print (Current_releaseyear , Current_release)
+src_file = current_release.html
+dest_file = f"current_release_{Current_releaseyear}.html"
+
+shutil.copy(src_file,dest_file)
+
 
 default_template_content = f"""
 <hr>
