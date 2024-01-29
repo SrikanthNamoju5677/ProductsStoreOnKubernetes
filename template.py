@@ -3,7 +3,7 @@ import sys
 Current_release = sys.argv[1]
 Current_releaseyear = sys.argv[2]
 
-print (currentrelease , currentreleaseyear)
+print (Current_releaseyear , Current_release)
 
 default_template_content = """
 <hr>
