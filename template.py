@@ -3,6 +3,8 @@ import sys
 currentrelease=sys.argv[1]
 currentreleaseyear=sys.argv[2]
 
+print (currentrelease , currentreleaseyear)
+
 default_template_content = """
 <hr>
 <h3><font face="Times New Roman">This release document contains updates for the currentrelease release w.r.t. currentreleaseyear release.</font></h3>
