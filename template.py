@@ -5,7 +5,7 @@ import os
 Current_release = sys.argv[1]
 Current_releaseyear = sys.argv[2]
 
-src_file = current_release.html
+src_file = "current_release.html"
 dest_file = f"current_release_{Current_releaseyear}.html"
 
 shutil.copy(src_file,dest_file)
