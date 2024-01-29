@@ -5,7 +5,7 @@ Current_releaseyear = sys.argv[2]
 
 print (Current_releaseyear , Current_release)
 
-default_template_content = f("""
+default_template_content = f"""
 <hr>
 <h3><font face="Times New Roman">This release document contains updates for the {Current_release} release w.r.t. {Current_releaseyear} release.</font></h3>
 <hr>
@@ -62,7 +62,7 @@ default_template_content = f("""
     <ul class="applications">
 	<li>None</li>	
     </ul>
-""")
+"""
 with open("current_release.html", "w") as file:
   file.write(default_template_content)
 print("default template created")
