@@ -1,3 +1,5 @@
+import sys
+
 currentrelease=sys.argv[1]
 currentreleaseyear=sys.argv[2]
 
