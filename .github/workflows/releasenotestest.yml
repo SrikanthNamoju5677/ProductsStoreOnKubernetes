@@ -23,7 +23,7 @@ jobs:
       - name: create-new-branch
         run: |
           git checkout -b releasenotesbranch4
-          git pull origin releasenotesbranch4
+          git pull
           python template.py ${{ inputs.currentrelease }} ${{ inputs.currentreleaseyear }}
       - name: commit and push changes
         env:
