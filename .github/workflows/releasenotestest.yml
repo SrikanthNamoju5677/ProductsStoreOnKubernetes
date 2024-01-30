@@ -1,5 +1,9 @@
 name: Release-Notes
 on:
+  workflow_run:
+    workflows: ["Create PR"]
+    types:
+     - completed
   workflow_dispatch:
     inputs:
       currentrelease:
@@ -37,13 +41,18 @@ jobs:
           if [[ -n "$(git status --porcelain)" ]]; then
             echo "Creating PR \"$PR_TITLE\" for branch $BRANCH_NAME"
             git commit -m "$PR_TITLE"
-            git pull origin $BRANCH_NAME
+            git pull rebase
             git push origin $BRANCH_NAME
             # gh pr create --title "$PR_TITLE" --body "This is an automated PR to update the files"
             gh pr create -B main -H releasenotesbranch4 --title "$PR_TITLE" --body "This is an automated PR to update the files"
           else
             echo "Looks like there was nothing to update."
           fi
+  create-PR:
+    runs-on: ubuntu-latest
+    steps: 
+     - name: checkout repository
+       uses: actions/checkout@v3 
       # - name: commit and push changes
       #   run: |
       #     git push origin --delete releasenotesbranch4
