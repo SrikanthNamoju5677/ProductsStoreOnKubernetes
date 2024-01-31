@@ -3,17 +3,17 @@ import shutil
 import os
 
 Current_release = sys.argv[1]
-Current_releaseyear = sys.argv[2]
+
 
 src_file = "current_release.html"
-dest_file = f"current_release_{Current_releaseyear}.html"
+dest_file = f"current_release_{Current_release}.html"
 
 shutil.copy(src_file,dest_file)
 
 
 default_template_content = f"""
 <hr>
-<h3><font face="Times New Roman">This release document contains updates for the {Current_release} release w.r.t. {Current_releaseyear} release.</font></h3>
+<h3><font face="Times New Roman">This release document contains updates for the Current release w.r.t. {Current_release} release.</font></h3>
 <hr>
 <h2><font face="Times New Roman" color="#FF0000">Red Card</h2>
     <ul class="red_card">
