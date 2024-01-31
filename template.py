@@ -8,9 +8,6 @@ Current_release = sys.argv[1]
 src_file = "current_release.html"
 dest_file = f"current_release_{Current_release}.html"
 
-shutil.copy(src_file,dest_file)
-
-
 default_template_content = f"""
 <hr>
 <h3><font face="Times New Roman">This release document contains updates for the Current release w.r.t. {Current_release} release.</font></h3>
@@ -69,6 +66,27 @@ default_template_content = f"""
 	<li>None</li>	
     </ul>
 """
-with open("current_release.html", "w") as file:
-  file.write(default_template_content)
-print("default template created")
+def copy_into_currentrelease():
+	shutil.copy(src_file,dest_file)
+	print( " copied file to destination file " + dest_file )
+	return
+	
+def create_default_template():
+        with open("current_release.html", "w") as file:
+                file.write(default_template_content)
+        print("default template created")
+	return
+	
+def create_release_notes():
+	if (os.path.exists(dest_file)):
+		print(dest_file + " already exists ")
+	 	return
+	copy_into_currentrelease()
+	create_default_template()
+	return
+	
+create_release_notes()
+		
+	
+
+
