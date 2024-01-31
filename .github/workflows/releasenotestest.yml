@@ -8,8 +8,6 @@ on:
     inputs:
       currentrelease:
         required: true
-      currentreleaseyear:
-        required: true
 jobs:
   create-branch-PR:
     runs-on: ubuntu-latest
