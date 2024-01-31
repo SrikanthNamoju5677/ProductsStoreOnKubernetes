@@ -79,10 +79,9 @@ def create_default_template():
 def create_release_notes():
 	if (os.path.exists(dest_file)):
 		print(dest_file + " already exists ")
-	return
-	copy_into_currentrelease()
-	create_default_template()
-	return
+	else:
+		copy_into_currentrelease()
+		create_default_template()
 	
 create_release_notes()
 		
