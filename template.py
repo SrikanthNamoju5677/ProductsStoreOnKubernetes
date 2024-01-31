@@ -74,8 +74,8 @@ def copy_into_currentrelease():
 def create_default_template():
         with open("current_release.html", "w") as file:
                 file.write(default_template_content)
-        print("default template created")
-	return
+        	print("default template created")
+		return
 	
 def create_release_notes():
 	if (os.path.exists(dest_file)):
