@@ -3,9 +3,11 @@ on:
   workflow_dispatch:
     inputs:
       INT_VIEW:
-        required: true
+        required: true 
         description: ClearCase int view name
         type: string
+      currentrelease:
+        required: true   
   workflow_run:
     workflows: ["Create PR"]
     types:
