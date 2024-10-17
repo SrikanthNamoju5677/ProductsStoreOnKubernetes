@@ -1,13 +1,16 @@
 name: Release-Notes
 on:
+  workflow_dispatch:
+    inputs:
+      INT_VIEW:
+        required: true
+        description: ClearCase int view name
+        type: string
   workflow_run:
     workflows: ["Create PR"]
     types:
      - completed
-  workflow_dispatch:
-    inputs:
-      currentrelease:
-        required: true
+  
 jobs:
   create-branch-PR:
     runs-on: ubuntu-latest
